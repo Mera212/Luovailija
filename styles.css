@@ -189,18 +189,34 @@ section {
     padding: 2rem 1rem;
     background: linear-gradient(135deg, var(--primary-gray) 0%, #ffffff 100%);
     gap: 2rem;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://raw.githubusercontent.com/Mera212/Luovailija/main/pics/IMG_20250716_093022.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.1;
+    z-index: -1;
+    filter: blur(10px);
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     padding: 2rem;
     width: 90%;
     max-width: 800px;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
     background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
