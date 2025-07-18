@@ -1,5 +1,5 @@
 :root {
-    --primary-yellow: #f8cd2c;
+    --primary-yellow: #ffd700;
     --primary-gray: #e0dcd6;
     --accent-blue: #1e2f97;
     --accent-pink: #f3b9c2;
@@ -25,7 +25,7 @@ body {
 
 nav {
     background-color: var(--primary-yellow);
-    padding: 1rem 5%;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +33,65 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile first - default styles */
+.logo {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: none;
+}
+
+/* Mobile menu button */
+.menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Desktop styles */
+@media screen and (min-width: 768px) {
+    nav {
+        padding: 1rem 5%;
+    }
+
+    .logo {
+        font-size: 2rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 2px;
+    }
+
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+    }
+
+    .nav-links li a {
+        color: var(--text-light);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        letter-spacing: 1px;
+    }
+
+    .menu-btn {
+        display: none;
+    }
 }
 
 .logo {
@@ -40,6 +99,9 @@ nav {
     font-size: 2rem;
     font-weight: bold;
     font-family: var(--font-heading);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .nav-links {
@@ -52,6 +114,8 @@ nav {
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1px;
 }
 
 .nav-links li a:hover {
@@ -62,42 +126,180 @@ section {
     padding: 5rem 5%;
 }
 
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    section {
+        padding: 3rem 2%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+    }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    section {
+        padding: 4rem 4%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1025px) {
+    section {
+        padding: 5rem 5%;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
 .hero {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     position: relative;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://raw.githubusercontent.com/Mera212/Luovailija/main/pics/IMG_20250716_093022.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 0.8;
-    z-index: 1;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, var(--primary-gray) 0%, #ffffff 100%);
+    gap: 2rem;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     padding: 2rem;
+    width: 90%;
     max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.hero-content {
+/* Mobile styles */
+@media screen and (max-width: 767px) {
+    .hero {
+        min-height: 80vh;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem;
+        width: 95%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-section {
+        width: 100%;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Tablet styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .hero {
+        min-height: 90vh;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        padding: 2rem;
+        width: 90%;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+}
+
+/* Desktop styles */
+@media screen and (min-width: 1025px) {
+    .hero {
+        min-height: 100vh;
+        padding: 3rem;
+        gap: 3rem;
+    }
+
+    .hero-content {
+        padding: 3rem;
+        width: 80%;
+    }
+
+    .hero-content h1 {
+        font-size: 3.5rem;
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+    color: var(--text-dark);
+    margin-left: auto;
+    margin-right: auto;
+}
     max-width: 800px;
     margin: 0 auto;
 }
