@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graafinen Suunnittelu Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">GS</div>
+        <ul class="nav-links">
+            <li><a href="#home">Koti</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#services">Palvelut</a></li>
+            <li><a href="#contact">Yhteystiedot</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Graafinen Suunnittelu</h1>
+            <p>Luo visuaalisia tarinoita, jotka kiinnostavat ja innostavat</p>
+            <div class="cta-section">
+                <a href="#contact" class="cta-button">
+                    <span class="cta-text">Aloita Projekti</span>
+                    <span class="cta-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Minun Työt</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="https://raw.githubusercontent.com/Mera212/Luovailija/main/pics/1752654567974-EDIT.jpg" alt="Design 1">
+                <h3>Suunnitteluprojekti 1</h3>
+            </div>
+            <div class="portfolio-item">
+                <img src="https://raw.githubusercontent.com/Mera212/Luovailija/main/pics/IMG_20250716_093022.jpg" alt="Design 2">
+                <h3>Suunnitteluprojekti 2</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Mitä Tarjoan</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Brändin Luominen</h3>
+                <p>Yksilöllisten brändien luominen</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Sivustosuunnittelu</h3>
+                <p>Modernit ja vastaavat verkkosivut</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-print"></i>
+                <h3>Tulostusmateriaalien Suunnittelu</h3>
+                <p>Professionaaliset tulostusmateriaalit</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Ota Yhteyttä</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Nimi" required>
+            <input type="email" placeholder="Sähköposti" required>
+            <textarea placeholder="Viesti" required></textarea>
+            <button type="submit" class="submit-button">Lähetä Viesti</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Graafinen Suunnittelu Portfolio. Kaikki oikeudet pidätetään.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
